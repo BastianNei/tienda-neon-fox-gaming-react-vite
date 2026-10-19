@@ -1,0 +1,13 @@
+.admin-busqueda {
+  max-width: 360px;
+}
+
+.admin-celda-nombre {
+  max-width: 320px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .admin-busqueda { max-width: 100%; }
+  .admin-celda-nombre { max-width: none; min-width: 160px; }
+}

@@ -1,0 +1,194 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+}
+
+.menu-lateral {
+  width: 250px;
+  flex-shrink: 0;
+  background-color: #212529;
+  color: #fff;
+  padding: 20px;
+}
+
+.menu-lateral a:hover {
+  text-decoration: underline !important;
+}
+
+.admin-brand {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.admin-nav-sep {
+  border-color: #495057;
+  margin: 20px 0;
+}
+
+.admin-link-tienda {
+  background-color: #343a40;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.admin-btn-salir {
+  background-color: #dc3545;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 20px;
+  min-width: 0;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: #343a40;
+  padding: 10px;
+  color: #fff;
+}
+
+.admin-header-izq {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-toggle {
+  display: none;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  padding: 2px 10px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.admin-backdrop {
+  display: none;
+}
+
+.contenido {
+  padding: 4px 0 30px;
+}
+
+/* Clases usadas por las páginas admin que aún son placeholders */
+.titulo-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.titulo-pagina h1 {
+  margin: 0 0 4px;
+  font-size: 1.75rem;
+}
+
+.boton {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton.secundario {
+  background: #6c757d;
+}
+
+/* ---------- Compartido entre páginas: tablas ---------- */
+.admin-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.admin-thumb--sm {
+  width: 42px;
+  height: 42px;
+}
+
+.admin-select-estado {
+  width: 150px;
+}
+
+/* ---------- Compartido entre páginas: formularios y paneles ---------- */
+.admin-preview {
+  height: 90px;
+  object-fit: contain;
+}
+
+.admin-panel-sm { max-width: 600px; }
+.admin-panel-md { max-width: 700px; }
+.admin-panel-lg { max-width: 800px; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 768px) {
+  /* Sidebar como menú deslizable */
+  .menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1040;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .menu-lateral.abierto {
+    transform: translateX(0);
+  }
+
+  .admin-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1030;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .admin-toggle {
+    display: inline-block;
+  }
+
+  .admin-main {
+    padding: 12px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .titulo-pagina { flex-direction: column; }
+}

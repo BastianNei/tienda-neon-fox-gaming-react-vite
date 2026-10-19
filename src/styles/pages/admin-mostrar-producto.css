@@ -1,0 +1,5 @@
+/* AdminMostrarProducto */
+.admin-detalle-img {
+  max-height: 260px;
+  object-fit: contain;
+}
